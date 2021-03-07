@@ -3,19 +3,25 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		D334329D1F84A75FE42EA311 /* Pods_InnoHomeworkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 803A6DCE7C402E22B424485F /* Pods_InnoHomeworkTests.framework */; };
 		D478621525F522EB00CBC73C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D478621425F522EB00CBC73C /* AppDelegate.swift */; };
 		D478621725F522EB00CBC73C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D478621625F522EB00CBC73C /* SceneDelegate.swift */; };
-		D478621925F522EB00CBC73C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D478621825F522EB00CBC73C /* ViewController.swift */; };
+		D478621925F522EB00CBC73C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D478621825F522EB00CBC73C /* MainViewController.swift */; };
 		D478621C25F522EB00CBC73C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D478621A25F522EB00CBC73C /* Main.storyboard */; };
 		D478621E25F522ED00CBC73C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D478621D25F522ED00CBC73C /* Assets.xcassets */; };
 		D478622125F522ED00CBC73C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D478621F25F522ED00CBC73C /* LaunchScreen.storyboard */; };
 		D478622C25F522ED00CBC73C /* InnoHomeworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D478622B25F522ED00CBC73C /* InnoHomeworkTests.swift */; };
 		D478623725F522ED00CBC73C /* InnoHomeworkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D478623625F522ED00CBC73C /* InnoHomeworkUITests.swift */; };
+		D4BBEF7025F5310A00AC0235 /* BaseViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BBEF6F25F5310A00AC0235 /* BaseViewModelType.swift */; };
+		D4BBEF7C25F5314800AC0235 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BBEF7925F5314800AC0235 /* EndPoint.swift */; };
+		D4BBEF7D25F5314800AC0235 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BBEF7A25F5314800AC0235 /* APIManager.swift */; };
+		D4BBEF7E25F5314800AC0235 /* RequestEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BBEF7B25F5314800AC0235 /* RequestEncoding.swift */; };
+		D4BBEF8325F5316C00AC0235 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BBEF8225F5316C00AC0235 /* DataModel.swift */; };
+		D4BBEF8825F5318500AC0235 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BBEF8725F5318500AC0235 /* MainViewModel.swift */; };
 		DAE27393BD005977DCFD769E /* Pods_InnoHomework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D51CC02BFDD9D6399DA1C79 /* Pods_InnoHomework.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +51,7 @@
 		D478621125F522EB00CBC73C /* InnoHomework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InnoHomework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D478621425F522EB00CBC73C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D478621625F522EB00CBC73C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D478621825F522EB00CBC73C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D478621825F522EB00CBC73C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D478621B25F522EB00CBC73C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D478621D25F522ED00CBC73C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D478622025F522ED00CBC73C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +62,12 @@
 		D478623225F522ED00CBC73C /* InnoHomeworkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InnoHomeworkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D478623625F522ED00CBC73C /* InnoHomeworkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnoHomeworkUITests.swift; sourceTree = "<group>"; };
 		D478623825F522ED00CBC73C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4BBEF6F25F5310A00AC0235 /* BaseViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModelType.swift; sourceTree = "<group>"; };
+		D4BBEF7925F5314800AC0235 /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		D4BBEF7A25F5314800AC0235 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		D4BBEF7B25F5314800AC0235 /* RequestEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestEncoding.swift; sourceTree = "<group>"; };
+		D4BBEF8225F5316C00AC0235 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		D4BBEF8725F5318500AC0235 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		EDBBA5205E15769CCC97D7DE /* Pods-InnoHomeworkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InnoHomeworkTests.debug.xcconfig"; path = "Target Support Files/Pods-InnoHomeworkTests/Pods-InnoHomeworkTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,7 +106,6 @@
 				EDBBA5205E15769CCC97D7DE /* Pods-InnoHomeworkTests.debug.xcconfig */,
 				B15A54346CCAA453551EBC67 /* Pods-InnoHomeworkTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -134,7 +145,9 @@
 			children = (
 				D478621425F522EB00CBC73C /* AppDelegate.swift */,
 				D478621625F522EB00CBC73C /* SceneDelegate.swift */,
-				D478621825F522EB00CBC73C /* ViewController.swift */,
+				D4BBEF6F25F5310A00AC0235 /* BaseViewModelType.swift */,
+				D4BBEF7825F5313400AC0235 /* APIManager */,
+				D4BBEF7725F5311100AC0235 /* MainView */,
 				D478621A25F522EB00CBC73C /* Main.storyboard */,
 				D478621D25F522ED00CBC73C /* Assets.xcassets */,
 				D478621F25F522ED00CBC73C /* LaunchScreen.storyboard */,
@@ -159,6 +172,26 @@
 				D478623825F522ED00CBC73C /* Info.plist */,
 			);
 			path = InnoHomeworkUITests;
+			sourceTree = "<group>";
+		};
+		D4BBEF7725F5311100AC0235 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				D478621825F522EB00CBC73C /* MainViewController.swift */,
+				D4BBEF8725F5318500AC0235 /* MainViewModel.swift */,
+				D4BBEF8225F5316C00AC0235 /* DataModel.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		D4BBEF7825F5313400AC0235 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				D4BBEF7A25F5314800AC0235 /* APIManager.swift */,
+				D4BBEF7925F5314800AC0235 /* EndPoint.swift */,
+				D4BBEF7B25F5314800AC0235 /* RequestEncoding.swift */,
+			);
+			path = APIManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,9 +410,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D478621925F522EB00CBC73C /* ViewController.swift in Sources */,
+				D4BBEF7D25F5314800AC0235 /* APIManager.swift in Sources */,
+				D4BBEF7E25F5314800AC0235 /* RequestEncoding.swift in Sources */,
+				D478621925F522EB00CBC73C /* MainViewController.swift in Sources */,
 				D478621525F522EB00CBC73C /* AppDelegate.swift in Sources */,
+				D4BBEF7C25F5314800AC0235 /* EndPoint.swift in Sources */,
+				D4BBEF8325F5316C00AC0235 /* DataModel.swift in Sources */,
 				D478621725F522EB00CBC73C /* SceneDelegate.swift in Sources */,
+				D4BBEF7025F5310A00AC0235 /* BaseViewModelType.swift in Sources */,
+				D4BBEF8825F5318500AC0235 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
