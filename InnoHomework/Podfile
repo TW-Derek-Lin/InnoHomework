@@ -1,0 +1,19 @@
+use_frameworks!
+
+def project_pods
+    pod 'RxSwift' , '5.1.1'
+    pod 'RxCocoa' , '5.1.1'
+    pod 'Kingfisher' , '4.10.1'
+end
+
+target 'InnoHomework' do
+    project_pods
+end
+
+
+target 'InnoHomeworkTests' do
+    inherit! :search_paths
+    # Pods for testing
+    project_pods
+end
+
