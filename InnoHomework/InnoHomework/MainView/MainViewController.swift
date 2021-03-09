@@ -12,7 +12,7 @@ import RxCocoa
 import Kingfisher
 
 class MainViewController: UIViewController {
-    let viewModel = MainViewModel()
+    let viewModel: AnyViewModel<MainViewModel.Input, MainViewModel.Output> = AnyViewModel(MainViewModel())
 
     private let searchBar = UISearchBar()
     private let tableView = UITableView()
@@ -31,7 +31,6 @@ class MainViewController: UIViewController {
         navigationItem.titleView = searchBar
         tableView.register(MainCell.self, forCellReuseIdentifier: MainCell.reuseIdentifier())
         view.addSubview(tableView)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
@@ -55,19 +54,8 @@ class MainViewController: UIViewController {
             }
         }.disposed(by: disposeBag)
 
-        tableView.rx.itemSelected.bind { [weak self] (indexPath) in
-            self?.tableView.deselectRow(at: indexPath, animated: true)
-            if let model = self?.viewModel.dataSource[safe: indexPath.row] {
-                print("\(model)")
-            }
-        }.disposed(by: disposeBag)
-
-        let input = MainViewModel.Input(trigger: rx.viewDidAppear, filter: searchBar.rx.text)
+        let input = MainViewModel.Input(trigger: rx.viewDidAppear, filter: searchBar.rx.text, selectEvent: tableView.rx.itemSelected)
         let output = viewModel.transform(input)
-
-        output.data.drive(onNext: { [weak self] (_) in
-            self?.tableView.reloadData()
-        }).disposed(by: disposeBag)
 
         output.data.drive(tableView.rx.items(cellIdentifier: MainCell.reuseIdentifier(), cellType: MainCell.self)) { [weak self] (row, data, cell) in
             cell.config(data, reload: { [weak self] in
@@ -77,6 +65,11 @@ class MainViewController: UIViewController {
                     self?.tableView.endUpdates()
                 }
             })
+        }.disposed(by: disposeBag)
+
+        output.selectedItem.emit { [weak self] (indexPath, data) in
+            self?.tableView.deselectRow(at: indexPath, animated: true)
+            print(data)
         }.disposed(by: disposeBag)
 
         output.isFetching.emit { [weak self] (isFetching) in

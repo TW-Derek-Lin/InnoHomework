@@ -14,14 +14,10 @@ protocol NetworkEndcoding {
     func encode(request: inout URLRequest, with parameters: Parameters?) throws
 }
 
-enum EncodingError: Error {
-    case jsonEndcodingError
-}
-
 struct JSONEncoding: NetworkEndcoding {
     func encode(request: inout URLRequest, with parameters: Parameters?) throws {
         guard let parameters = parameters else { return }
-        guard let data = try? JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted) else { throw EncodingError.jsonEndcodingError }
+        guard let data = try? JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted) else { throw NetworkError.jsonEncodingError }
         if request.value(forHTTPHeaderField: "Content-Type") == nil {
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         }
