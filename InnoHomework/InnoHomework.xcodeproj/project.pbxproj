@@ -24,6 +24,7 @@
 		D4BBEF8825F5318500AC0235 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BBEF8725F5318500AC0235 /* MainViewModel.swift */; };
 		D4BBEF9125F533B100AC0235 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BBEF9025F533B100AC0235 /* HUD.swift */; };
 		D4BBEF9625F5342500AC0235 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BBEF9525F5342500AC0235 /* MainCell.swift */; };
+		D4BBEFAC25F67ADC00AC0235 /* AnyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BBEFAB25F67ADC00AC0235 /* AnyViewModel.swift */; };
 		DAE27393BD005977DCFD769E /* Pods_InnoHomework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D51CC02BFDD9D6399DA1C79 /* Pods_InnoHomework.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		D4BBEF8725F5318500AC0235 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		D4BBEF9025F533B100AC0235 /* HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		D4BBEF9525F5342500AC0235 /* MainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		D4BBEFAB25F67ADC00AC0235 /* AnyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyViewModel.swift; sourceTree = "<group>"; };
 		EDBBA5205E15769CCC97D7DE /* Pods-InnoHomeworkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InnoHomeworkTests.debug.xcconfig"; path = "Target Support Files/Pods-InnoHomeworkTests/Pods-InnoHomeworkTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +152,7 @@
 				D478621425F522EB00CBC73C /* AppDelegate.swift */,
 				D478621625F522EB00CBC73C /* SceneDelegate.swift */,
 				D4BBEF6F25F5310A00AC0235 /* BaseViewModelType.swift */,
+				D4BBEFAB25F67ADC00AC0235 /* AnyViewModel.swift */,
 				D4BBEF8F25F5339C00AC0235 /* HUD */,
 				D4BBEF7725F5311100AC0235 /* MainView */,
 				D4BBEF7825F5313400AC0235 /* APIManager */,
@@ -429,6 +432,7 @@
 				D4BBEF7E25F5314800AC0235 /* RequestEncoding.swift in Sources */,
 				D478621925F522EB00CBC73C /* MainViewController.swift in Sources */,
 				D478621525F522EB00CBC73C /* AppDelegate.swift in Sources */,
+				D4BBEFAC25F67ADC00AC0235 /* AnyViewModel.swift in Sources */,
 				D4BBEF9625F5342500AC0235 /* MainCell.swift in Sources */,
 				D4BBEF7C25F5314800AC0235 /* EndPoint.swift in Sources */,
 				D4BBEF8325F5316C00AC0235 /* DataModel.swift in Sources */,

@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 protocol Service {
-    func retriveData<T: EndPoint>(from endPoint: T, completion: @escaping (Result<T.Element, Error>) -> Void)
+    func retriveData<T: EndPoint>(from endPoint: T) -> Observable<T.Element>
 }
 
 class APIManager: Service {
@@ -19,28 +19,36 @@ class APIManager: Service {
     init(_ configuratin: URLSessionConfiguration = .default) {
         self.urlSession = URLSession(configuration: configuratin)
     }
-
-    func retriveData<T: EndPoint>(from endPoint: T, completion: @escaping (Result<T.Element, Error>) -> Void) {
-        do {
-            let request = try endPoint.makeRequest()
-            let task = urlSession.dataTask(with: request) { data, response, error in
-                let result = Result<T.Element, Error> {
-                    try ErrorHandler.handling(with: error, response: response)
-                    if let data = data {
-                        return try JSONDecoder().decode(T.Element.self, from: data)
-                    } else {
-                        throw NetworkError.dataMissing
+    func retriveData<T>(from endPoint: T) -> Observable<T.Element> where T : EndPoint {
+        return Observable<T.Element>.create { [weak self] (observer) -> Disposable in
+            do {
+                let request = try endPoint.makeRequest()
+                let task = self?.urlSession.dataTask(with: request) { data, response, error in
+                    let result = Result<T.Element, Error> {
+                        try ErrorHandler.handling(with: error, response: response)
+                        if let data = data {
+                            return try JSONDecoder().decode(T.Element.self, from: data)
+                        } else {
+                            throw NetworkError.dataMissing
+                        }
+                    }
+                    DispatchQueue.main.async {
+                        switch result {
+                        case .success(let data):
+                            observer.onNext(data)
+                            observer.onCompleted()
+                        case .failure(let error):
+                            observer.onError(error)
+                        }
                     }
                 }
+                task?.resume()
+            } catch {
                 DispatchQueue.main.async {
-                    completion(result)
+                    observer.onError(error)
                 }
             }
-            task.resume()
-        } catch {
-            DispatchQueue.main.async {
-                completion(.failure(error))
-            }
+            return Disposables.create()
         }
     }
     struct ErrorHandler {

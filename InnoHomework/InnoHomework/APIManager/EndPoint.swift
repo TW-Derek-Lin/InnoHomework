@@ -11,7 +11,7 @@ import Foundation
 typealias HTTPHeaders = [String: String]
 
 enum NetworkError: Error {
-    case responseError, statusCodeError(Int), urlMissing, dataMissing, timeout, notReachable
+    case responseError, statusCodeError(Int), urlMissing, dataMissing, timeout, notReachable, jsonEncodingError
     var description: String {
         switch self {
         case .responseError:
@@ -26,6 +26,8 @@ enum NetworkError: Error {
             return "request timeout"
         case .notReachable:
             return "Network not reachable"
+        case .jsonEncodingError:
+            return "Encoding error"
         }
     }
 }
